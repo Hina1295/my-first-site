@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>学生の格安店舗サポート — サイト制作・オペレーション設計 | University Crew</title>
+  <meta name="description" content="大学生チームが飲食店・小規模店舗向けに、オペレーション設計・メニュー設計・簡易サイト制作を格安（5,000円〜）で提供します。短納期・実務視点。" />
+  <meta property="og:title" content="学生の格安店舗サポート — サイト制作・オペレーション設計" />
+  <meta property="og:description" content="大学生チームが飲食店・小規模店舗向けに、オペレーション設計・メニュー設計・簡易サイト制作を格安で提供します。" />
+  <meta property="og:type" content="website" />
+  <style>
+    /* ===== Reset-ish ===== */
+    *{box-sizing:border-box}
+    html,body{margin:0;font-family:system-ui,-apple-system,"Hiragino Kaku Gothic ProN","メイリオ",Meiryo,Arial,sans-serif;color:#111;background:#fff;line-height:1.6}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;height:auto;display:block}
+
+    /* ===== Layout ===== */
+    header{background:#0f1720;color:#fff;padding:18px 20px;position:sticky;top:0;z-index:40}
+    .container{max-width:1100px;margin:0 auto;padding:0 20px}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .brand{font-weight:700;letter-spacing:0.02em}
+    nav ul{display:flex;gap:14px;list-style:none;margin:0;padding:0}
+    nav button{background:transparent;border:1px solid rgba(255,255,255,0.12);color:#fff;padding:8px 12px;border-radius:6px;cursor:pointer}
+
+    /* ===== Hero ===== */
+    .hero{display:flex;gap:28px;align-items:center;padding:48px 0}
+    .hero-left{flex:1}
+    .hero h1{font-size:28px;margin:0 0 10px}
+    .hero p.lead{margin:0 0 18px;color:#e6eef8}
+    .cta-row{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{display:inline-block;padding:12px 16px;border-radius:8px;background:#07b; color:#fff;font-weight:600}
+    .btn.secondary{background:transparent;border:1px solid #07b;color:#07b}
+    .hero-right{flex:1;text-align:right}
+    .card{background:#f8fafc;border-radius:10px;padding:16px;box-shadow:0 6px 18px rgba(2,6,23,0.06)}
+
+    /* ===== Features ===== */
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:28px 0}
+    .feature{background:#fff;border:1px solid #eef2f6;padding:18px;border-radius:10px}
+    .feature h3{margin:0 0 8px;font-size:16px}
+
+    /* ===== Pricing & Process ===== */
+    .pricing{display:flex;gap:16px;flex-wrap:wrap;margin:22px 0}
+    .price{flex:1;min-width:220px;background:#fff;border:1px solid #eef2f6;padding:20px;border-radius:10px}
+    .price .amount{font-weight:700;font-size:20px;color:#0b5bd5;margin:8px 0}
+    .process{display:flex;flex-direction:column;gap:10px}
+
+    /* ===== Portfolio / Team / FAQ ===== */
+    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .faq dt{font-weight:700}
+    .faq dd{margin:6px 0 12px 0}
+
+    /* ===== Contact ===== */
+    form{display:grid;gap:10px}
+    input,textarea,select{padding:10px;border-radius:8px;border:1px solid #dfe7ef}
+    textarea{min-height:120px;resize:vertical}
+    .muted{color:#6b7280;font-size:13px}
+
+    /* ===== Footer ===== */
+    footer{border-top:1px solid #eef2f6;padding:20px 0;margin-top:40px;color:#6b7280;font-size:13px}
+
+    /* ===== Responsive ===== */
+    @media (max-width:900px){
+      .grid{grid-template-columns:repeat(2,1fr)}
+      .hero{flex-direction:column;text-align:left}
+      .hero-right{text-align:left}
+      .two-col{grid-template-columns:1fr}
+    }
+    @media (max-width:600px){
+      nav ul{display:none}
+      header .nav{align-items:flex-start}
+      .grid{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container nav">
+      <div class="brand">University Crew</div>
+      <nav>
+        <ul>
+          <li><a href="#services">サービス</a></li>
+          <li><a href="#pricing">料金</a></li>
+          <li><a href="#process">流れ</a></li>
+          <li><a href="#contact">問い合わせ</a></li>
+        </ul>
+      </nav>
+      <div style="display:flex;gap:8px;align-items:center">
+        <a class="btn" href="#contact">無料相談（5分）</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <div class="hero-left">
+        <h1>大学生チームが小規模店舗の「やること」を一緒に形にします</h1>
+        <p class="lead">飲食店・美容室・小売向けに、メニュー設計／オペレーション／簡易HP作成を格安で提供。短納期・実務視点で現場に落とせる提案をします。</p>
+        <div class="cta-row">
+          <a class="btn" href="#contact">相談する（無料）</a>
+          <a class="btn secondary" href="#pricing">料金を見る</a>
+        </div>
+        <p class="muted" style="margin-top:12px">価格帯の目安：1案件 5,000円〜10,000円（内容・規模により変動）</p>
+      </div>
+      <div class="hero-right">
+        <div class="card">
+          <strong>短例</strong>
+          <p style="margin:8px 0 0">・メニュー設計＋サイト（1P）＝ 8,000円<br>・オペレーション設計（簡易マニュアル）＝ 5,000円</p>
+          <p style="margin:12px 0 0;font-size:13px" class="muted">※ 学割・学生チームが担当。法人向けの大規模案件は別途お見積り。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services">
+      <h2>提供サービス</h2>
+      <div class="grid" aria-hidden="false">
+        <div class="feature">
+          <h3>オペレーション設計</h3>
+          <p>作業手順・役割分担・シフト案など、現場で再現できる実務マニュアルを作ります。</p>
+        </div>
+        <div class="feature">
+          <h3>メニュー設計・原価管理</h3>
+          <p>単価計算・原価率の目安、利益を出すメニュー構成の提案を行います。</p>
+        </div>
+        <div class="feature">
+          <h3>簡易サイト制作</h3>
+          <p>1ページLPやメニュー・予約導線の簡易サイトをHTML/CSSで作成します（スマホ最適化）。</p>
+        </div>
+        <div class="feature">
+          <h3>SNS・集客サポート</h3>
+          <p>InstagramやMEOの導線設計、初期投稿テンプレート提供など集客の土台作り。</p>
+        </div>
+        <div class="feature">
+          <h3>現場改善コンサル（格安）</h3>
+          <p>ヒアリング→改善提案→簡易実行プラン。短時間で効果の出る改善案を優先。</p>
+        </div>
+        <div class="feature">
+          <h3>研修資料作成</h3>
+          <p>スタッフ向けの簡易研修スライド・チェックリストを作成します。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section id="pricing">
+      <h2>料金（目安）</h2>
+      <div class="pricing">
+        <div class="price">
+          <h3>ライトプラン</h3>
+          <p class="amount">5,000円〜</p>
+          <p>・簡易メニュー設計 or オペレーション1本（短いマニュアル）<br>・作業時間：〜5時間相当</p>
+        </div>
+        <div class="price">
+          <h3>スタンダード</h3>
+          <p class="amount">8,000円〜</p>
+          <p>・メニュー設計＋簡易サイト（1P）またはオペレーション＋研修資料<br>・作業時間：6〜12時間相当</p>
+        </div>
+        <div class="price">
+          <h3>カスタム</h3>
+          <p class="amount">10,000円〜（要見積）</p>
+          <p>・複数業務のセット、大型改修、現地ヒアリングが必要な場合は別途見積り。</p>
+        </div>
+      </div>
+      <p class="muted">料金は税込・目安です。規模・納期によって変動します。まずは無料相談で要件を教えてください。</p>
+    </section>
+
+    <!-- PROCESS -->
+    <section id="process">
+      <h2>制作の流れ</h2>
+      <div class="process">
+        <div><strong>1. 無料相談（オンライン5〜15分）</strong> — 要件と優先順位の確認。</div>
+        <div><strong>2. 見積り 提供（無料）</strong> — 作業範囲・納期・価格を提示。</div>
+        <div><strong>3. 作業開始</strong> — 初稿を提示、フィードバック反映（通常1〜2回）。</div>
+        <div><strong>4. 納品・軽微な修正対応</strong> — 納品後の簡単な修正は一定期間対応。</div>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO / CASE STUDY -->
+    <section id="works">
+      <h2>実績（例）</h2>
+      <div class="two-col">
+        <div class="card">
+          <h3>新規カフェ：メニュー最適化＋1Pサイト</h3>
+          <p>課題：客単価が低い／メニューが多すぎる → 対応：原価・回転率を考慮したメニュー絞り込み、写真と導線を意識したLP作成。結果：仮の数値で客単価+10％の想定。</p>
+        </div>
+        <div class="card">
+          <h3>小規模美容室：オペレーション見直し</h3>
+          <p>課題：施術時間バラつき → 対応：作業手順の標準化・チェックリスト作成。スタッフ研修用のスライドを納品。</p>
+        </div>
+      </div>
+      <p class="muted" style="margin-top:12px">※ 実績はサンプルです。</p>
+    </section>
+
+    <!-- TEAM -->
+    <section id="team">
+      <h2>担当チーム</h2>
+      <p>経営・マーケティング・IT系を学ぶ大学生チームが担当。現場目線で「実行できる」提案を重視します。学割で低価格提供。</p>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq">
+      <h2>よくある質問</h2>
+      <dl class="faq">
+        <dt>Q：本当に大学生が作業するのですか？</dt>
+        <dd>A：はい。全工程を学生が担当しますが、必要に応じて外部講師やアドバイザーの意見を取り入れます。</dd>
+
+        <dt>Q：納期はどれくらいですか？</dt>
+        <dd>A：簡易案件であれば3〜7日、標準案件で1〜2週間が目安です。繁忙期は変動します。</dd>
+
+        <dt>Q：公開後の保守はできますか？</dt>
+        <dd>A：軽微な修正は無料期間内に対応可能。継続保守は別途（月額/回数制）で対応します。</dd>
+      </dl>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <h2>問い合わせ・無料相談</h2>
+      <div class="two-col">
+        <div>
+          <p>まずは簡単な要望だけでもOK。下のフォームか、直接メールでどうぞ。</p>
+         <form action="https://docs.google.com/forms/d/e/1FAIpQLSdCOGxJkCgGyH7_FxgXFmznDrrG43VAcoVV4AWaT4V8yr8brQ/viewform?usp=header" target="_blank">
+  <button type="submit" class="btn">グーグルフォームで相談する</button>
+</form>
+
+
+<iframe name="hidden_iframe" style="display:none;" onload="if(submitted){alert('送信が完了しました。')}"></iframe>
+<script>let submitted = false;</script>
+
+        </div>
+        <div>
+          <div class="card">
+            <h4>無料相談の案内</h4>
+            <p>所要時間：5〜15分（オンライン推奨）<br>内容：現状の課題、希望する成果、納期感の確認</p>
+            <p style="margin-top:10px">その他：対面ヒアリングが必要な場合は別途交通費が発生することがあります。</p>
+          </div>
+
+          <div style="margin-top:12px">
+            <h4>連絡先・SNS</h4>
+            <p class="muted">メール： unicrew8@gmail.com<br>Instagram： @hn._.s2（差し替え）</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer>
+  <div class="container">
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+      <div>© <strong>University Crew</strong> — 大学生チームによる格安店舗サポート</div>
+      <div class="muted">
+        <a href="terms.html" target="_blank">利用規約・プライバシーポリシー</a>
+      </div>
+    </div>
+  </div>
+</footer>
+  </main>
+  </script>
+</body>
+</html>
